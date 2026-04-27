@@ -1,8 +1,8 @@
 This the README for games.sv
 
 Project Overview
-This project analyzes a dataset of Steam games to predict the number of negative reviews a game will receive based on its available metadata.
-Steam is a major digital distribution platform for PC games, and understanding factors that influence negative reviews can provide insight into game reception and quality expectations.
+This project analyzes a dataset of Steam games to predict the number of negative and positive reviews a game will receive based on its available metadata.
+Steam is a major digital distribution platform for PC games, and understanding factors that influence negative and positive reviews can provide insight into game reception and quality expectations.
 The dataset used contains information on games released on Steam up to 2019, including features such as genre, price, playtime, developer, publisher, and user engagement statistics.
 
 Dataset Description
@@ -12,7 +12,7 @@ The dataset can be changed to the entire 27,000 games if you download the datase
 and in the code change "steam_test.csv" to should be "steam.csv", if you do this expect to have to a wait when running the code with all 27,000 games.
 
 Goal
-The objective is to build predictive models that estimate the number of negative reviews a game will receive based on its features.
+The objective is to build predictive models that estimate the number of negative and positive reviews a game will receive based on its features.
 This can help:
 Understand factors influencing poor reception
 Identify risky game attributes before release
