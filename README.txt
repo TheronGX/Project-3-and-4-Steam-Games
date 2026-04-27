@@ -40,4 +40,4 @@ Captures nonlinear interactions between features
 How to run
 Make sure to have the dataset either the 2019 one that I included or the original one that you can get from that link.
 Make sure you have numpy and pandas downloaded.
-Then you should be able to just run the code and it should make 3 figures and the rest of the data will be printed out.
+Then you should be able to just run the code and it should make 5 figures and the rest of the data will be printed out.
