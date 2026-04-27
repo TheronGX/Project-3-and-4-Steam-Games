@@ -11,7 +11,7 @@ missing = df.isnull().sum()
 missing = missing[missing > 0]
 print(missing.sort_values(ascending=False))
 #-----------------Class-2-----------------#
-target_col = "negative_ratings"
+target_col = "positive_ratings"
 
 #Seperate numeric and categorical columns
 numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
@@ -35,8 +35,8 @@ for col in categorical_cols:
 df = pd.get_dummies(df, drop_first=True)
 
 # define X and y
-X = df.drop("negative_ratings", axis=1)
-y = df["negative_ratings"]
+X = df.drop("positive_ratings", axis=1)
+y = df["positive_ratings"]
 
 # scale features
 from sklearn.preprocessing import StandardScaler
@@ -108,8 +108,8 @@ mae_ne = mean_absolute_error(y_test, y_pred_normal)
 
 plt.figure()
 plt.scatter(y_test, y_pred_normal, alpha=0.5)
-plt.xlabel("Actual Negative Ratings")
-plt.ylabel("Predicted Negative Ratings (Normal Eq.)")
+plt.xlabel("Actual Positive Ratings")
+plt.ylabel("Predicted Positive Ratings (Normal Eq.)")
 plt.title("Normal Equation Predictions vs Actual")
 plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], "r--")
 plt.show()
@@ -141,8 +141,8 @@ print(f"kNN Normalized Root Mean Squared Error = {norm_rmse_knn}")
 # graphing predected vs actual kNN
 import matplotlib.pyplot as plt
 plt.scatter(y_test, knn_pred, alpha=0.5)
-plt.xlabel("Actual Negative Ratings")
-plt.ylabel("Predicted Negative Ratings")
+plt.xlabel("Actual Positive Ratings")
+plt.ylabel("Predicted Positive Ratings")
 plt.title("kNN Predictions vs Actual")
 plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], "r--")
 plt.show()
@@ -166,8 +166,8 @@ mae = mean_absolute_error(y_test, pred)
 # graphing predected vs actual
 import matplotlib.pyplot as plt
 plt.scatter(y_test, pred, alpha=0.5)
-plt.xlabel("Actual Negative Ratings")
-plt.ylabel("Predicted Negative Ratings")
+plt.xlabel("Actual Positive Ratings")
+plt.ylabel("Predicted Positive Ratings")
 plt.title("Random Forest Predictions vs Actual")
 plt.plot([y.min(), y.max()], [y.min(), y.max()], "r--")
 plt.show()
@@ -216,6 +216,6 @@ plt.figure(figsize=(10, 6))
 plt.barh(importance_df["Feature"].head(top_n)[::-1], importance_df["Importance"].head(top_n)[::-1])
 plt.xlabel("Relative Importance")
 plt.ylabel("Feature")
-plt.title("Top 15 Drivers of Negative Ratings (Random Forest)")
+plt.title("Top 15 Drivers of Positive Ratings (Random Forest)")
 plt.tight_layout() # Ensures labels don't get cut off
 plt.show()
